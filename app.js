@@ -1,4 +1,4 @@
-// Get elements
+// Get elements...
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const snapButton = document.getElementById('snap');
