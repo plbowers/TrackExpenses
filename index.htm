@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Take Picture and Save Locally</title>
+    <title>Save Expense (with optional picture of receipt) and Save Locally</title>
+    <h2>ALL of EVERYTHING is optional - you can save it completely empty if you want</h2>
   </head>
   <body>
-    <h1>Take a Picture</h1>
-    <video id="video" width="640" height="480" autoplay></video>
+    <table>
+      <tr>
+        <td>ER Type:</td><td><input name="ERType" id="ERType"></input></td>
+      </tr>
+      <tr>
+        <td>Date:</td><td><input name="Date" id="Date"></input></td>
+      </tr>
+      <tr>
+        <td>Category:</td><td><select name="Cat" id="Cat"></input></td>
+      </tr>
+      <tr>
+        <td>Description:</td><td><select name="Desc" id="Desc"></input></td>
+      </tr>
+      <tr>
+        <td>Amount:</td><td><select name="Amt" id="Amt"></input></td>
+      </tr>
+      <tr>
+        <td>Currency:</td><td><select name="Currency" id="Currency"></input></td>
+      </tr>
+      <tr>
+        <td>Receipt Pic</td>
+        <td>
+          <video id="video" width="640" height="480" autoplay></video>
+        </td>
+      </tr>
+      <tr>
+        <td>Comment:</td><td><select name="Comment" id="Comment"></input></td>
+      </tr>
+    </table>
     <button id="snap">Snap Photo</button>
     <canvas id="canvas" width="640" height="480"></canvas>
-    <button id="save">Save Photo</button>
+    <button id="save">Save Expense Transaction</button>
     <button id="query">Query Photos</button>
     <button id="export">Export Database</button>
+    <button id="export">Delete ALL</button>
     <img id="photo" src="" alt="Photo will appear here" />
 
     <script src="app.js"></script>
+    <p>This is saved ONLY on the device where you save it. Thus the export has to be done here. However, you can import multiple times into the same ER so feel free to save on multiple devices and then pull in from each.</p>
   </body>
 </html>
