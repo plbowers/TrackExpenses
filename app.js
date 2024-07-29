@@ -29,7 +29,7 @@ request.onerror = event => {
 
 // Access the camera
 navigator.mediaDevices
-  .getUserMedia({ video: true })
+  .getUserMedia({ video: { facingMode: 'environment' } })
   .then(stream => {
     video.srcObject = stream;
   })
