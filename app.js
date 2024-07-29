@@ -6,6 +6,7 @@ const saveButton = document.getElementById('save');
 const queryButton = document.getElementById('query');
 const photo = document.getElementById('photo');
 const exportButton = document.getElementById('export');
+const refreshAppButton = document.getElementById('refreshApp');
 
 let db;
 
@@ -19,6 +20,9 @@ request.onupgradeneeded = event => {
   objectStore.createIndex('description', 'description', { unique: false });
 };
 
+refreshAppButton.click = event => {
+  location.reload(true);
+}
 request.onsuccess = event => {
   db = event.target.result;
 };
