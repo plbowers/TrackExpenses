@@ -30,6 +30,7 @@
       navigator.serviceWorker.register("sw.js"); 
     }
     </script>
+    <script src="dist/clipboard.min.js"></script>
  
   </head>
   <body>
@@ -57,6 +58,7 @@
       <tr>
         <td colspan="2">
           <video id="video" width="640" height="480" autoplay></video>
+          <img id="photoDisplay" src="" alt="Photo will appear here" />
         </td>
       </tr>
       <tr>
@@ -67,9 +69,8 @@
     <canvas id="canvas" width="640" height="480"></canvas>
     <button id="save">Save Expense Transaction</button>
     <button id="query">Query Photos</button>
-    <button id="export">Export Database</button>
-    <button id="export">Delete ALL</button>
-    <img id="photo" src="" alt="Photo will appear here" />
+    <button id="exportBtn">Export Database</button>
+    <button id="deleteAllBtn">Delete ALL</button>
     <button id="refreshApp">Refresh App</button>
 
     <script src="app.js"></script>

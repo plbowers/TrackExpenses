@@ -13,6 +13,7 @@ let db;
 // Open IndexedDB
 const request = indexedDB.open('PhotoDB', 1);
 
+new ClipboardJS('#exportBtn')
 request.onupgradeneeded = event => {
   db = event.target.result;
   const objectStore = db.createObjectStore('photos', { keyPath: 'id', autoIncrement: true });
@@ -104,7 +105,9 @@ queryButton.addEventListener('click', () => {
     if (cursor) {
       const savedData = cursor.value;
       const url = URL.createObjectURL(savedData.image);
-      photo.src = url;
+      photoDisplay.src = url;
+      $(photoDisplay).show();
+      $("#video").hide();
 
       console.log('Timestamp:', savedData.timestamp);
       console.log('Description:', savedData.description);
